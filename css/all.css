@@ -1,0 +1,43 @@
+body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+background-color: #fff;
+}
+.main-img{
+    position:relative;
+}
+
+.logo {
+    top:54px;
+    left:26px;
+    position: absolute;
+}
+.navbar .navbar-header{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: arial;
+}
+.web-banner{
+	margin-top: 40px;
+	margin-bottom:30px;
+	background:#EDE9DD;
+}
+
+ .container-fluid .col-sm-3{
+	width: 377px;
+	margin: 20px;
+}
+.col-sm-3 p{
+	margin-top: 17px;
+	margin-left: -25px;
+}
+.col-sm-3 span{
+	font-weight: bold;
+	margin-left: -25px;
+}
+.test{
+	margin: 0 auto;
+	width:80%;
+	
+}
