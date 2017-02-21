@@ -7,16 +7,21 @@ background-color: #fff;
 .main-img{
     position:relative;
 }
-
 .logo {
-    top:54px;
-    left:26px;
+    top:0;
+    left:12px;
     position: absolute;
 }
-.navbar .navbar-header{
-	font-size: 12px;
-	font-weight: bold;
+.nav li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
 	font-family: arial;
+}
+.nav li a:hover{
+  color: #ed7637;
+  background: none;
+  text-decoration: underline;
 }
 .web-banner{
 	margin-top: 40px;
@@ -39,5 +44,4 @@ background-color: #fff;
 .test{
 	margin: 0 auto;
 	width:80%;
-	
 }

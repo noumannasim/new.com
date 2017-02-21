@@ -13,7 +13,7 @@ $pwd= $_POST['pwd'];
 
   $sql = "INSERT INTO signup (fname, lname, email, password, category) VALUE ('$fname', '$lname', '$email', '$pwd', '')";
   $var = mysqli_query($connection, $sql);
-  echo "string";
+ 
 }
  ?>
 <!DOCTYPE html>

@@ -1,8 +1,26 @@
-	<?php
+<?php
+session_start();
+include_once("config.php");
+?>
+<?php 
 
-	include_once("config.php");
+	if ($_SESSION['cat'] == NULL) {
+		$url='index.php';
+ echo '<script>window.location = "'.$url.'";</script>';
+ die;
+	}
+ ?> 
+<?php 
+	if (isset($_POST['logout'])) {
 
-	?>
+session_unset();
+session_destroy();
+
+		 $url='index.php';
+ echo '<script>window.location = "'.$url.'";</script>';
+ die;
+	}
+ ?>
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -17,7 +35,6 @@
 	</head>
 	<body>
 		<div class="main-img">
-			<img class="img-responsive" src="images/slideshow_1.jpg" alt="backgrond image" width="1305" height="600">
 			<div class="logo">
 				<nav class="navbar">
 					<div class="container-fluid">
@@ -40,6 +57,7 @@
 									<li><a href="#">Chocolate Banana</a></li>
 								</ul>
 							</li>
+							<form method="post" action="">
 							<li><a href="#">OUR CAUSE</a></li>
 							<li><a href="#">OUR STORY</a></li>
 							<li><a href="#">BLOG</a></li>
@@ -47,8 +65,10 @@
 							<li><a href="https://facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							<li><a href="https://instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 							<li><a href="https://gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-							<li><a href="login.php" ><i class="fa fa-user" aria-hidden="true"></i></a></li>
+							<li><a href="login.php" target="_new"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 							<li><a href="https://google.com"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+							<input name="logout" type="submit"  value="logout">
+							</form>
 						</ul> 
 					</div>
 				</ul>
@@ -59,58 +79,7 @@
 </div>
 <div class="web-banner">
 	<img class="img-responsive center-block" src="images/banner.jpg" alt="web-banner" width="950" height="200" >
-</div>
-<div class="feature">
-	<div class="container-fluid bg-3 text-center">    
-		<div class="row">
-			<div class="col-sm-3">
-				<a href="#"> <img src="images/feature1.jpg" class="img-responsive" style="width:100%" height="100" alt="Image"></a>
-			</div>
-			<div class="col-sm-3"> 
-				<a href="#"> <img src="images/feature2.jpg" class="img-responsive" style="width:100%" alt="Image"> </a>
-			</div>
-			<div class="col-sm-3"> 
-				<a href="#"> <img src="images/feature3.jpg" class="img-responsive" style="width:100%" alt="Image"> </a>
-			</div>
-		</div>
-	</div>
-</div>
-</div><br>
-<div class="products">
-	<div class="container-fluid bg-3">
-		<h1>Products</h1>
-		<div class="row">
-			<div class="col-sm-3">
-				<a href="#"><img src="images/product1.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
-				<p>Chocolate Banana 12-Pack</p>
-				<span>$23.99</span>
-			</div>
-			<div class="col-sm-3"> 
-				<a href="#"> <img src="images/product2.jpg" class="img-responsive" style="width:100%" alt="Image"> </a>
-				<p>Blueberry Almond 12-Pack</p>
-				<span>Blueberry Almond 12-Pack Due to unexpected demand, this item is currently sold out. - $23.99</span>
-			</div>
-			<div class="col-sm-3"> 
-				<a href="#"> <img src="images/product3.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
-				<p>Cherry Cashew 12-Pack</p>
-				<span>$23.99</span>
-			</div>
-		</div><br><br>
-		<div class="container-fluid bg-3">
-			<div class="row">
-				<div class="col-sm-3">
-					<a href="#"> <img src="images/product4.jpg" class="img-responsive" style="width:100%" alt="Image"> </a>
-					<p>Peanut Butter and Jelly 12-Pack</p>
-					<span>$23.99</span>
-				</div>
-				<div class="col-sm-3"> 
-				<a href="#"> <img src="images/product5.jpg" class="img-responsive" style="width:100%" alt="Image"> </a>
-					<p>Chocolate Espresso Beans</p>
-					<span>$23.99</span>
-				</div>
-			</div>
-		</div>
-	</div>
+	<h1>Welcome to Admin dashboard</h1>
 </div>
 </body>
 </html>
