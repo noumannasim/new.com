@@ -4,29 +4,23 @@
 ?>
 <?php 
   if(isset($_POST['login'])){
-
       $myusername = $_POST['email'];
       $mypassword = $_POST['password']; 
-      
       $sql = "SELECT * FROM signup";
       $result = mysqli_query($connection, $sql);
-
      while( $row = mysqli_fetch_array($result)) {
       $mail = $row['email'];
       $pass = $row['password'];
-
-
-
       if($mail == $myusername AND $pass == $mypassword AND $row['category'] == '0') {
         $_SESSION['mail'] = $myusername; 
-                  
+        $_SESSION['id'] = $row['index'];                 
         $url='dashboard.php';
  echo '<script>window.location = "'.$url.'";</script>';
  die;
       }
       elseif($mail == $myusername AND $pass == $mypassword AND $row['category'] == '1') {
-         $_SESSION['mail'] = $myusername; 
-                  
+         $_SESSION['mail'] = $myusername;
+         $_SESSION['id'] = $row['index'];                  
         $url='admin.php';
  echo '<script>window.location = "'.$url.'";</script>';
  die;
@@ -34,7 +28,6 @@
      }
    }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +41,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 <div class="container">
 <div class=" col-xs-4">
   <form id='login' action="" method='post'>
@@ -67,6 +59,5 @@
     <a href="signup.php"><button type="button" class="btn btn-danger"> Sign Up</button></a>
   </form>
 </div>
-
 </body>
 </html>

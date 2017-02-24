@@ -4,7 +4,7 @@ include_once("config.php");
 ?>
 <?php 
 
-	if ($_SESSION['cat'] == NULL) {
+	if ($_SESSION['mail'] == NULL) {
 		$url='index.php';
  echo '<script>window.location = "'.$url.'";</script>';
  die;
@@ -77,9 +77,6 @@ session_destroy();
 	</nav>
 </div>
 </div>
-<div class="web-banner">
-	<img class="img-responsive center-block" src="images/banner.jpg" alt="web-banner" width="950" height="200" >
-	<h1>Welcome to Admin dashboard</h1>
-</div>
+
 </body>
 </html>
