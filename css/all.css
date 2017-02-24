@@ -20,7 +20,7 @@ background-color: #fff;
 }
 .nav li a:hover{
   color: #ed7637;
-  background: none;
+  background: none !important;
   text-decoration: underline;
 }
 .web-banner{

@@ -20,14 +20,14 @@ session_destroy();
 	}
  ?>
 <?php
-	
+	$msg = ""; 
  if (isset($_POST['upload'])) {
  	$target = "profilepic/".basename($_FILES['image']['name']);
  	$image = $_FILES['image']['name'];
     $did = $_SESSION['id'];
 
 
- 	$sql = "UPDATE signup SET image = '$image' WHERE index = '$did' ";
+ 	$sql = "UPDATE signup SET image = '$image'  /*WHERE index = '$did' */ ";
  	mysqli_query($connection, $sql);
 
  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
@@ -56,6 +56,23 @@ session_destroy();
 	<h2>Welcome to customer dashboard</h2>
 	</div>
 	<div id="content">
+
+<?php
+	$sql = "SELECT * FROM signup";
+	$result = mysqli_query($connection, $sql);
+	while ($row = mysqli_fetch_array($result)) {
+		echo "<div id='img_dev'> ";
+			echo "<img style=width:200px;  src ='profilepic/".$row['image']."' >";
+		echo "</div>";
+
+	}
+  ?>
+
+
+
+
+
+
 		<form method="post" action="dashboard.php" enctype="multipart/form-data">
 		<input type="hidden" name="size" value="1000000">
 			<div>
